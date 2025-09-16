@@ -2,41 +2,59 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
+/* Bharat Yatra Navigator Design System - Modern Indian Travel App Theme
+All colors MUST be HSL. Inspired by Indian culture and premium travel experiences.
 */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Background system - Clean light gray base */
+    --background: 215 25% 97%;
+    --foreground: 215 25% 23%;
 
+    /* Card system - Pure white with subtle elevation */
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 215 25% 23%;
 
+    /* Popover system */
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 215 25% 23%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Primary system - Vibrant saffron orange */
+    --primary: 30 100% 60%;
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 30 100% 55%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Secondary system - Deep indigo blue */
+    --secondary: 219 83% 32%;
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Muted system - Subtle grays */
+    --muted: 215 25% 95%;
+    --muted-foreground: 215 15% 55%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Accent system - Lighter saffron for accents */
+    --accent: 30 100% 65%;
+    --accent-foreground: 0 0% 100%;
 
+    /* Destructive system */
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    /* Border and input system */
+    --border: 215 25% 90%;
+    --input: 215 25% 90%;
+    --ring: 30 100% 60%;
 
-    --radius: 0.5rem;
+    /* Design tokens */
+    --radius: 0.75rem;
+    
+    /* Custom travel theme tokens */
+    --travel-gradient: linear-gradient(135deg, hsl(30 100% 60%), hsl(30 100% 70%));
+    --travel-shadow: 0 10px 30px -5px hsl(30 100% 60% / 0.2);
+    --travel-shadow-hover: 0 15px 40px -5px hsl(30 100% 60% / 0.3);
+    --card-shadow: 0 4px 20px -2px hsl(215 25% 23% / 0.08);
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
     --sidebar-background: 0 0% 98%;
 
@@ -101,5 +119,37 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  /* Travel app specific animations */
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+  
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+  
+  /* Custom travel button variants */
+  .travel-button {
+    background: var(--travel-gradient);
+    box-shadow: var(--travel-shadow);
+    transition: var(--transition-smooth);
+  }
+  
+  .travel-button:hover {
+    box-shadow: var(--travel-shadow-hover);
+    transform: translateY(-2px);
+  }
+  
+  /* Interest tag animations */
+  .interest-tag {
+    transition: var(--transition-smooth);
+  }
+  
+  .interest-tag:hover {
+    transform: translateY(-2px);
   }
 }

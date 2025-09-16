@@ -22,6 +22,7 @@ export default {
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
+          hover: "hsl(var(--primary-hover))",
         },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
@@ -62,6 +63,17 @@ export default {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
+      },
+      fontFamily: {
+        'poppins': ['Poppins', 'sans-serif'],
+      },
+      boxShadow: {
+        'travel': 'var(--travel-shadow)',
+        'travel-hover': 'var(--travel-shadow-hover)',
+        'card': 'var(--card-shadow)',
+      },
+      backgroundImage: {
+        'travel-gradient': 'var(--travel-gradient)',
       },
       keyframes: {
         "accordion-down": {
